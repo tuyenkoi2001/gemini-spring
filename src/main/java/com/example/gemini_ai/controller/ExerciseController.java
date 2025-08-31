@@ -1,6 +1,5 @@
 package com.example.gemini_ai.controller;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +18,6 @@ public class ExerciseController {
 	}
 	
 	@PostMapping("/api/v1/exercises")
-	@CrossOrigin(origins = "http://localhost:8080")
 	public String GetSingleExerciseWithConfig (@RequestBody ExerciseConfig config) {
 		ExerciseBuilder promptBuilder = new ExerciseBuilder();
 
