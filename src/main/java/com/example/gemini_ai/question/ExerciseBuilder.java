@@ -3,10 +3,20 @@ package com.example.gemini_ai.question;
 public class ExerciseBuilder {
 	private String prompt;
     private final String basePrompt = "Tạo một bài tập tiếng Nhật theo các yêu cầu sau";
+    private final String filePrompt = "Tôi vừa upload 1 tệp có nội dung liên quan tới ngữ pháp tiếng Nhật, "
+    		+ "hãy phân tích nội dung của tệp, "
+    		+ "phân tích các ngữ pháp, từ vựng, ví dụ được sử dụng trong tệp";
 
     // Constructor mặc định
     public ExerciseBuilder() {
         this.prompt = basePrompt;
+    }
+    
+    public ExerciseBuilder(boolean hasFileAsInput) {
+    	if(hasFileAsInput) {
+    		this.prompt = filePrompt;
+    	}
+    	this.prompt = basePrompt;
     }
 
     /**
