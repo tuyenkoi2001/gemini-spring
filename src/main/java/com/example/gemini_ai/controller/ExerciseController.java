@@ -40,8 +40,8 @@ public class ExerciseController {
 	            ).text();
 	}
 	
-	@PostMapping("/upload")
-	public String testupload (@RequestPart("file") MultipartFile file, @RequestPart("config") ExerciseConfig config) {
+	@PostMapping("/api/v1/upload")
+	public String GetExerciseWithFile (@RequestPart("file") MultipartFile file, @RequestPart("config") ExerciseConfig config) {
 		ExerciseBuilder promptBuilder = new ExerciseBuilder();
 
         promptBuilder.withNumberOfQuestions(config.getNumberOfQuestions());
